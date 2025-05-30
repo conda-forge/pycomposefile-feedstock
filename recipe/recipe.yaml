@@ -15,7 +15,7 @@ source:
 build:
   number: 1
   noarch: python
-  script: BUILD_TAG="${{version }}" ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: BUILD_TAG="${{ version }}" ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
