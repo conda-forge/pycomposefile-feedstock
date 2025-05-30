@@ -13,9 +13,9 @@ source:
   sha256: a355d515c4c4ff92ee5a16590de8b367a3be4827046592d0870f8cb6ac4a6e34
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: BUILD_TAG="${{version }}" ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -32,6 +32,13 @@ tests:
         - pycomposefile
       pip_check: true
       python_version: ${{ python_min }}.*
+  # Version metadata in package is currently incorrect.
+  # Ref.: https://github.com/smurawski/pycomposefile/issues/29
+  - script:
+      interpreter: python
+      content: |
+        from importlib.metadata import version
+        assert version("${{ name }}") == "${{ version }}"
 
 about:
   summary: Structured deserialization of Docker Compose files.
