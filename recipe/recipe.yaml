@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pycomposefile
-  version: 0.0.32
+  version: "0.0.33"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pycomposefile-${{ version }}.tar.gz
-  sha256: a355d515c4c4ff92ee5a16590de8b367a3be4827046592d0870f8cb6ac4a6e34
+  sha256: 14d59327dbd3a1e29f999a35b0a2fb68e87b478debef2fb704ae29d329609fe2
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: BUILD_TAG="${{ version }}" ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
