@@ -22,6 +22,7 @@ requirements:
     - setuptools
     - python ${{ python_min }}.*
     - pip
+    - flit
   run:
     - python >=${{ python_min }}
     - pyyaml
