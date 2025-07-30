@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pycomposefile
-  version: "0.0.33"
+  version: "0.0.34"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pycomposefile-${{ version }}.tar.gz
-  sha256: 14d59327dbd3a1e29f999a35b0a2fb68e87b478debef2fb704ae29d329609fe2
+  sha256: 933a93b439f8692882b4d50ff744e12a3d996040068e96651a37dd842126a508
 
 build:
   number: 0
